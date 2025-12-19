@@ -1,0 +1,5 @@
+{
+  "name": "AI 仪表盘",
+  "description": "A drag-and-drop dashboard builder powered by Gemini AI. Create data visualizations via natural language and get smart insights instantly.",
+  "requestFramePermissions": []
+}

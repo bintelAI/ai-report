@@ -1,0 +1,150 @@
+/* Tailwind CSS 基础样式 */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* DaisyUI 组件样式 */
+@import 'daisyui/dist/full.css';
+
+/* 自定义现代化样式 */
+@layer base {
+  body {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  /* 现代化的滚动条 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  
+  /* 暗色模式的滚动条 */
+  [data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #374151;
+  }
+  
+  [data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+  }
+  
+  [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
+}
+
+@layer components {
+  /* 现代化的卡片样式 */
+  .card-modern {
+    @apply bg-base-100 shadow-modern border border-base-200 rounded-modern;
+    transition: all 0.2s ease;
+  }
+  
+  .card-modern:hover {
+    @apply shadow-modern-lg border-primary/20;
+  }
+  
+  /* 现代化的按钮样式 */
+  .btn-modern {
+    @apply btn rounded-modern font-medium transition-all duration-200;
+  }
+  
+  .btn-modern-primary {
+    @apply btn-modern bg-primary hover:bg-primary/90 border-primary text-white;
+  }
+  
+  .btn-modern-secondary {
+    @apply btn-modern bg-secondary hover:bg-secondary/90 border-secondary text-white;
+  }
+  
+  /* 现代化的输入框样式 */
+  .input-modern {
+    @apply input input-bordered rounded-modern focus:ring-2 focus:ring-primary/20 focus:border-primary;
+    transition: all 0.2s ease;
+  }
+  
+  /* 现代化的导航栏样式 */
+  .navbar-modern {
+    @apply navbar bg-base-100 shadow-modern border-b border-base-200;
+  }
+  
+  /* 现代化的模态框样式 */
+  .modal-modern {
+    @apply modal modal-bottom sm:modal-middle;
+  }
+  
+  .modal-box-modern {
+    @apply modal-box rounded-modern shadow-modern border border-base-200;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .card-modern {
+    @apply mx-2;
+  }
+  
+  .modal-box-modern {
+    @apply mx-2;
+  }
+}
+
+/* 暗色模式优化 */
+[data-theme="dark"] .card-modern {
+  @apply bg-base-200/50;
+}
+
+[data-theme="dark"] .input-modern {
+  @apply bg-base-200 border-base-300;
+}
+
+[data-theme="dark"] .input-modern:focus {
+  @apply bg-base-100;
+}
