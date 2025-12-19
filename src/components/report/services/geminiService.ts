@@ -43,7 +43,7 @@ const DASHBOARD_GENERATOR_PROMPT = `
 1. **纯JSON输出**：只返回JSON对象，严禁包含 Markdown 标记（如 \`\`\`json）、解释说明或注释。
 2. **数据源策略**：
    - 默认使用 'static' 模式生成高质量的模拟数据。
-   - 模拟数据 (staticData) 必须真实、丰富，不得为空。
+   - 模拟数据 (staticData) 必须真实、丰富，不得为空，且按图表类型要求提供数据源 
    - 表格类型 (table) 的数据应包含多个字段（如：姓名、日期、金额、状态等）。
 3. **布局建议**：
    - colSpan 范围 1-12（12为全宽）。通常指标卡占 3，小型图表占 6，复杂图表或表格占 12。
@@ -65,6 +65,9 @@ JSON 结构示例：
   "widgets": [{ "type": "bar", "title": "营收统计", "data": [...], "colSpan": 6, "height": 350 }],
   "parameters": [{ "key": "date", "label": "日期范围", "type": "date-range" }]
 }
+问题：
+  - 表格数据源字段不要使用 xy,使用正常的字段名
+  - 时间轴务必包含 date 字段，用于展示时间趋势。
 `;
 
 const DASHBOARD_MODIFIER_PROMPT = `
