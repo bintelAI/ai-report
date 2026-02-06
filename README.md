@@ -1,10 +1,23 @@
 
-[🌐 方块智联工作室](https://www.bintelai.com)
+
+[方块智联AI 团队开发](https://www.bintelai.com)
+
+## 智能运维模块
+
+智能运维系统是一个 AI 无缝全面融入的系统，基于各个模块拆分开发，通过微服务整合，实现高可用、可扩展、可维护的运维管理。
+
+[aissh助手](https://github.com/bintelAI/aissh)
+
+[机房视图模块](https://github.com/flyowl/smart-flow)
+
+[AI工作流模块](https://github.com/bintelAI/ai-workflow)
+
+[AI报表模块](https://github.com/bintelAI/ai-report)
 
 # AI 智能仪表盘系统 (AI-Dashboard)
 
 
-[🌐 在线演示 (Demo)](https://aidemo.bintelai.com/report/index.html)
+[🌐 在线演示 (Demo)](https://www.bintelai.com/report/)
 
 ![系统预览](static/1766133692327.png)
 
